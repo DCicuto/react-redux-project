@@ -6,25 +6,25 @@ import * as CourseActions from '../../store/actions/course';
 
 const Sidebar = ({ modules, toggleLesson }) => (
   <aside>
-    {modules.map(module => (
-      <div key={module.id}>
-        <strong>{module.title}</strong>
-        <ul>
-          {module.lessons.map(lesson => (
-            <li key={lesson.id}>
-              {lesson.title}
-              <button onClick={() => toggleLesson((module, lesson))}>
-                Selecionar
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </aside>
+  {modules.map(module => (
+  <div key={module.id}>
+    <strong>{module.title}</strong>
+    <ul>
+      {module.lessons.map(lesson => (
+        <li key={lesson.id}>
+          {lesson.title}
+          <button onClick={() => toggleLesson(module, lesson)}>
+            Selecionar
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
+</aside>
 );
 
-// connect é uma função que retorna outra função. Aqui ela vai receber como parâmetro o estado e deve retornar dessa função quais propriedades eu quero dessa função.
+// connect é uma função que retorna outra função. Aqui ela vai receber como parâmetro o estado e deve retornar dessa função quais propriedades eu quero dessa
 
 
 //bla bla função que recebe o estado e retorna um objeto com as propriedades que eu quero
